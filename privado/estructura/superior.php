@@ -1,3 +1,16 @@
+<?php
+session_start();
+error_reporting(0);
+	$varsesion = $_SESSION['nombre'];
+
+	if($varsesion== null || $varsesion= ''){
+
+	    header("Location: ../login.php");
+		die();
+	}
+
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,8 +19,8 @@
     <title>OTB Patito</title>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/atlasian.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/189cbc8fac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../vista/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../vista/css/superior.css">
+    <link rel="stylesheet" href="../vista/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vista/css/superior.css">
     <script defer src="../vista/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
@@ -23,12 +36,12 @@
 
         <section class="routes-content">
           <i class="fas fa-users"></i>
-        <a class="btn-routes" href="{{ route('afiliados.mostrar') }}">Afiliados</a>
+        <a class="btn-routes" href="mostrar.php">Afiliados</a>
         </section>     
         
         <section class="routes-content">
           <i class="fas fa-user"></i>
-        <a class="btn-routes" href="{{ route('seleccion') }}"><div>Registrar</div></a>
+        <a class="btn-routes" href="registrar.php"><div>Registrar</div></a>
         </section>
         
         <section class="routes-content">
@@ -41,15 +54,6 @@
         <a class="btn-routes" href="">Historial de pagos</a>
         </section>
 
-      </section>  
-
-      <!-- <section class="routes-content">
-        <label for="">{{ Auth::user()->name }}</label>
-        <form action="{{ route('logout') }}" method="POST">
-          @csrf
-          <input type="submit" class="btn-link" value="Salir">
-        </form>
-        </section> -->
-
+      </section> 
 
     </nav>

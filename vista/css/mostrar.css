@@ -1,0 +1,55 @@
+.container-content{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding: 20px;
+    height: 100vh;
+  }
+  .content-cabecera{
+    display: flex;
+    padding-bottom: 10px;
+    height: 10%;
+    justify-content: space-between;
+  }
+  .content-btn{
+    padding-right: 3%;
+  }
+  .btn{
+    background-color: #3863a3;
+    color: white;
+  }
+  .btn:hover{
+    background-color: #3863a3;
+    color: white;
+    font-weight: bold;
+  }
+  .content-form{
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .table-container{
+    border: 1px solid;
+  }
+  .title{
+    color: black;
+  }
+  .table{
+    background-color: white;
+  }
+  .modal{
+    overflow: auto;
+  }
+  .cabecera-title{
+    font-weight: bold;
+  }
+  .overflow{
+    width: 200px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  }
