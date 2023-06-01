@@ -17,7 +17,7 @@
                 </div>
                 <label class="content-text" for="">Segundo <br> medidor</label>
             </a>
-            <a href="{{ route( 'medidor.guardar') }}" class="seleccion-tipo-registro">
+            <a href="agregar.php" class="seleccion-tipo-registro">
                 <div class="content-img">
                     <i class="fa-solid fa-hand-holding-droplet"></i>
                 </div>

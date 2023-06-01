@@ -15,9 +15,8 @@
         header('Location: ../../privado/mostrar.php');
 
     }else{
-        echo '<script language="javascript">console.log("juas");</script>';
+
         header('Location: ../../login.php');
-        
         session_destroy();
         
     }
