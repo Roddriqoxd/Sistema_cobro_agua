@@ -1,6 +1,6 @@
-<?php require_once "../privado/estructura/superior.php"?>
+<?php require_once "../vista/estructura/superior.php"?>
 
-<link rel="stylesheet" href="../vista/css/mostrar.css">
+<link rel="stylesheet" href="../complementos/css/mostrar.css">
 
 <section class="container-content">
 
@@ -129,4 +129,4 @@
 
   </section>
 
-<?php require_once "../privado/estructura/inferior.php"?>
+<?php require_once "../vista/estructura/inferior.php"?>

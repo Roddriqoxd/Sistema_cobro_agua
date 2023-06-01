@@ -19,8 +19,8 @@ error_reporting(0);
     <title>OTB Patito</title>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/atlasian.css' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/189cbc8fac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../vista/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../vista/css/superior.css">
+    <link rel="stylesheet" href="../complementos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../complementos/css/superior.css">
     <script defer src="../vista/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>

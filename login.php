@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/atlasian.css' rel='stylesheet'>
-    <link rel="stylesheet" href="vista/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vista/css/login.css">
+    <link rel="stylesheet" href="complementos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="complementos/css/login.css">
     <script defer src="vista/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>

@@ -1,15 +1,15 @@
-<?php require_once "../privado/estructura/superior.php"?>
+<?php require_once "../vista/estructura/superior.php"?>
 
-<link rel="stylesheet" href="../vista/css/agregar.css">
+<link rel="stylesheet" href="../complementos/css/agregar.css">
 
 <section class="container-content">
 
       <section class="content-cabecera">
-        <h3 class="cabecera-title">REGISTRAR MEDIDOR</h3>
+        <h3 class="cabecera-title">REGISTRAR MEDIDOR Y AFILIADO</h3>
         <hr>
       </section>
         
-        <form class="form-data" action="{{ route('medidor.guardar') }}" method="POST">
+        <form class="form-data" action="../modelo/registrar.php" method="POST">
           
           <div class="modal-body">
 
@@ -30,7 +30,7 @@
                 <label class="px-4" for="floatingInput">Deuda Bs.</label>
               </div>
 
-              <input type="hidden" name="precio" value="1">
+              <input type="hidden" name="tipo" value="medidor_y_empleado">
 
               <script>
                 
@@ -147,4 +147,4 @@
 
     </section>
 
-<?php require_once "../privado/estructura/inferior.php"?>
+<?php require_once "../vista/estructura/inferior.php"?>

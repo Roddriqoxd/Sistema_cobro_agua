@@ -12,7 +12,7 @@
 
     if($filas){
 
-        header('Location: ../../privado/mostrar.php');
+        header('Location: ../../vista/mostrar.php');
 
     }else{
 
@@ -20,8 +20,5 @@
         session_destroy();
         
     }
-
-
-
 
 ?>
