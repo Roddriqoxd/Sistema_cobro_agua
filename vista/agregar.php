@@ -120,8 +120,6 @@
 
           </div>
 
-          <input type="hidden" name="cod_medidor" value="2">
-
           <div class="row">
 
             <div class="form-floating mb-3 col-md-6">
@@ -130,8 +128,6 @@
             </div>
 
           </div>
-
-          <input type="hidden" name="cod_medidor" value="2">
 
         </div>
         <div class="modal-footer rounded-0">

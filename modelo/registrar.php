@@ -1,6 +1,5 @@
 <?php
 
-require_once ("modelo/bd.php");
 
 if (isset($_POST['tipo'])){ 
     switch ($_POST['tipo']){
@@ -23,12 +22,16 @@ function medidor_y_afiliado() {
     $materno=$_POST['apellido_m'];
     $celular=$_POST['celular'];
     $fecha=$_POST['fecha_registro'];
+    $casa=$_POST['num_casa'];
 
 
     $conexion=mysqli_connect("localhost","root","1234","sistema_cobro_agua");
-    // $consulta= "SELECT * FROM usuarios WHERE correo='$correo' AND password='$password'";
-    // $resultado=mysqli_query($conexion, $consulta);
-    // $filas=mysqli_num_rows($resultado);
+    $afiliado= "INSERT INTO `afiliado`(`nombre`, `paterno`, `materno`, `telefono`, `registro`, `numero_casa`) VALUES ('$nombre','$paterno','$materno','$celular','$fecha','$casa')";
+    $medidor= "INSERT INTO `medidor`( `codigo`, `deuda`, `ubicacion`, `precio`) VALUES ('$codigo','$deuda','$ubicacion','1')";
+    $consulta1=mysqli_query($conexion, $medidor);
+    $consulta2=mysqli_query($conexion, $afiliado);
+    header('Location: ../vista/mostrar.php');
+
 }
 
     

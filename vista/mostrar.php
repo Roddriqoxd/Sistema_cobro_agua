@@ -9,7 +9,7 @@
         
         <div class="content-btn">
 
-            <button type="button" id="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <!-- <button type="button" id="añadir" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Añadir+
             </button>
 
@@ -87,14 +87,17 @@
                   </div>
                 </form>
               </div>
-            </div>
+            </div> -->
 
         </div>
       </section>
 
-      <!-- <input type="search" id="buscar" placeholder="Buscar afiliado"> -->
-
       <section class="content-form">
+        
+      <div class="search-container">
+        <input type="search" id="buscar" placeholder="Buscar afiliado">
+        <i class="fas fa-search"></i>
+      </div>
 
       <table class="table">
         <thead class="title">
@@ -103,25 +106,30 @@
             <th class="col">Nombre</th>
             <th class="col">Apellidos</th>
             <th class="col">Celular</th>
-            <th class="col">Direccion</th>
-            <th class="col">Nro. Casa</th>
+            <!-- <th class="col">Direccion</th> -->
+            <!-- <th class="col">Nro. Casa</th> -->
             <th class="col">Editar</th>
           </tr>
         </thead>
         <tbody class="content">
+        <?php
+          $conexion=mysqli_connect("localhost","root","1234","sistema_cobro_agua");
+          $query = mysqli_query($conexion, "SELECT * FROM afiliado ORDER BY id DESC");
+          while ($data = mysqli_fetch_assoc($query)) { ?>
           <tr>
-            <td class="col">{{ $dato->id }}</td>
-            <td class="col"><div class="overflow">{{ $dato->nombre }}</div></td>
-            <td class="col"><div class="overflow">{{ $dato->apellido_p }} {{ $dato->apellido_m }}</div></td>
-            <td class="col">{{ $dato->celular }}</td>
-            <td class="col"><div class="overflow">{{ $dato->ubicacion }}</div></td>
-            <td class="col">{{ $dato->num_casa }}</td>
+            <td class="col"><?php echo $data['id']; ?></td>
+            <td class="col"><div class="overflow"><?php echo $data['nombre']; ?></div></td>
+            <td class="col"><div class="overflow"><?php echo $data['materno']; ?> <?php echo $data['paterno']; ?></div></td>
+            <td class="col"><?php echo $data['telefono']; ?></td>
+            <!-- <td class="col"><div class="overflow"><?php echo $data['']; ?></div></td> -->
+            <!-- <td class="col"><?php echo $data['id']; ?></td> -->
             <td class="col">
               <button class="btn bg-warning">Ver</button>
               <button class="btn bg-success">Editar</button>
               <button class="btn bg-danger">Eliminar</button>
             </td>
           </tr>
+          <?php } ?>
         </tbody>
       </table>
 
