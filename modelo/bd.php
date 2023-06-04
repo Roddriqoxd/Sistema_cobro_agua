@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$password = "1234";
+$password = "";
 $database = "sistema_cobro_agua";
 
 $conexion = mysqli_connect($host, $user, $password, $database);

@@ -1,6 +1,5 @@
 <?php
 
-
 if (isset($_POST['tipo'])){ 
     switch ($_POST['tipo']){
 
@@ -25,13 +24,20 @@ function medidor_y_afiliado() {
     $casa=$_POST['num_casa'];
 
 
-    $conexion=mysqli_connect("localhost","root","1234","sistema_cobro_agua");
-    $afiliado= "INSERT INTO `afiliado`(`nombre`, `paterno`, `materno`, `telefono`, `registro`, `numero_casa`) VALUES ('$nombre','$paterno','$materno','$celular','$fecha','$casa')";
+    require_once "../modelo/bd.php";
     $medidor= "INSERT INTO `medidor`( `codigo`, `deuda`, `ubicacion`, `precio`) VALUES ('$codigo','$deuda','$ubicacion','1')";
+    $medidorID = "SELECT * FROM `medidor` WHERE codigo = '$codigo'";
     $consulta1=mysqli_query($conexion, $medidor);
-    $consulta2=mysqli_query($conexion, $afiliado);
-    header('Location: ../vista/mostrar.php');
+    $consulta3= mysqli_query($conexion, $medidorID);
+    $row= mysqli_fetch_assoc($consulta3);
+    if ($resultado =mysqli_query($conexion, $medidorID )) {
+        $row= mysqli_fetch_assoc($resultado);
+        $ID =  $row['id'];
+        $consulta2=mysqli_query($conexion, "INSERT INTO `afiliado`(`nombre`, `paterno`, `materno`, `telefono`, `registro`, `numero_casa`, `medidor`) 
+        VALUES ('$nombre','$paterno','$materno','$celular','$fecha','$casa', '$ID')");
 
+    }
+    header('Location: ../vista/mostrar.php');
 }
 
     

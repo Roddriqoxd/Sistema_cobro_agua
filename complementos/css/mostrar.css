@@ -22,15 +22,16 @@
     background-color: #3863a3;
     color: white;
     font-weight: bold;
-  }
+  }  
   .content-form{
     padding-left: 1%;
     padding-right: 1%;
     width: 100%;
-    height: 90%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: auto;
   }
   .table-container{
     border: 1px solid;
