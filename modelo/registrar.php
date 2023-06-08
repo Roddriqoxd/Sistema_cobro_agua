@@ -5,8 +5,13 @@ if (isset($_POST['tipo'])){
 
         case 'medidor_y_empleado':
             medidor_y_afiliado();
-            break; 
-		}
+            break;
+            
+        case 'cambio_de_precio':
+            cabiar_precio();
+            break;
+
+		}		
 
 	}
 
@@ -40,6 +45,16 @@ function medidor_y_afiliado() {
     header('Location: ../vista/mostrar.php');
 }
 
+
+    function cabiar_precio(){
+
+        $precio = $_POST['precio'];
+
+        require_once "../modelo/bd.php";
+        $precio= "UPDATE `precio` SET agua = '$precio' WHERE id='1' ";
+        $query=mysqli_query($conexion, $precio);
+        header('Location: ../vista/precio-agua.php');
+    }
     
 
 ?>

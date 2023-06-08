@@ -48,7 +48,7 @@ error_reporting(0);
         
         <section class="routes-content">
           <i class="fas fa-droplet"></i>
-        <a class="btn-routes" href="{{ route('cobrar') }}"><div>Realizar <br> cobro</div></a>
+        <a class="btn-routes" href="precio-agua.php"><div>Precio <br>agua</div></a>
         </section>
 
         <!-- <section class="routes-content">
@@ -65,11 +65,14 @@ error_reporting(0);
         </div>
 
         <form style="display: flex; flex-direction: column; gap: 5px;" action="../modelo/login/cerrar.php" method="POST">
-          <label style="color: white;">Jose Rodrigo</label>
+
+          <label style="color: white;"><?php echo $_SESSION['nombre']?></label>
+
           <button type="submit" class="btn btn-danger"
-            style="--bs-btn-padding-y: .15rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; background-color: rgb(222, 0, 0);">
-            Salir
-          </button>
+            style="--bs-btn-padding-y: .15rem;
+                   --bs-btn-padding-x: .5rem;
+                   --bs-btn-font-size: .75rem; 
+                   background-color: rgb(222, 0, 0);">Salir</button>
         </form>
 
       </section>
