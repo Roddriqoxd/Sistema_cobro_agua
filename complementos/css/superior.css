@@ -21,12 +21,16 @@ body{
   padding: 10px;
   gap: 10px;
   color: white;
+  height: 20%;
+  justify-content: center;
+  align-items: center;
 }
 .container-ruters{
   display: flex;
   flex-direction: column;
-  height: 80%;
-  justify-content: space-around;
+  height: 60%;
+  align-items: center;
+  justify-content: space-evenly;
   padding-top: 20px;
 }
 .routes-content{
