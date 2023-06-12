@@ -32,9 +32,18 @@
 
               <input type="hidden" name="tipo" value="medidor_y_empleado">
 
+              <?php
+                require_once "../modelo/bd.php";
+                $query = mysqli_query($conexion, "SELECT * FROM precio");
+                while ($data = mysqli_fetch_assoc($query)) {
+              ?>
+              <input type="hidden" value="<?php echo $data['agua']; ?>" id="precio_agua">
+              <?php } ?>
+
               <script>
                 
                 function sumar(){
+                  const precio = document.getElementById('precio_agua').value;
                  
                   var fecha = document.getElementById('fecha').value;
                   var año = fecha.split('-')[0];
@@ -45,10 +54,10 @@
 
                   function deuda(m1,a1,m2,a2){
                     if(a1 == a2){
-                      return (m2-m1)*15;
+                      return (m2-m1)*precio;
                     }
                     if(a1<a2){
-                      return ((12-m1)*15)+((image.png)*15);
+                      return ((12-m1)*precio)+((image.png)*precio);
                     }
                   }
 

@@ -58,7 +58,7 @@ error_reporting(0);
 
       </section>
 
-      <section style="display: flex; gap: 10px; width: 100%; justify-content: center; margin-top: 25px">
+      <section style="display: flex; gap: 10px; width: 100%; justify-content: center;">
         <div>
           <img src="../complementos/img/avatar.jpg" width="40px" height="40px" 
           style="border-radius: 50%; margin-top: 8px;">

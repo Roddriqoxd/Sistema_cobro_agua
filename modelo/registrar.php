@@ -49,6 +49,7 @@ function medidor_y_afiliado() {
     function cabiar_precio(){
 
         $precio = $_POST['precio'];
+        $otro = $_POST['otro'];
 
         require_once "../modelo/bd.php";
         $precio= "UPDATE `precio` SET agua = '$precio' WHERE id='1' ";
