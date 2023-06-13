@@ -14,14 +14,14 @@
           <div class="modal-body">
 
             <div class="form-floating mb-3">
-              <input autofocus type="text" class="form-control rounded-0 " name="codigo">
-              <label for="floatingInput">Codigo medidor</label>
+              <input autofocus type="text" class="form-control rounded-0" name="codigo" required >
+              <label class="form-check-label" for="validationFormCheck1">Codigo medidor</label>
             </div>
 
             <div class="row">
 
               <div class="form-floating mb-3 col-md-6">
-                <input type="date" class="form-control rounded-0"  name="fecha" id="fecha" onchange="sumar()">
+                <input required type="date" class="form-control rounded-0"  name="fecha" id="fecha" onchange="sumar()">
                 <label class="px-4" for="floatingInput">Ultima fecha de pago</label>
               </div>
 
@@ -50,21 +50,22 @@
                   var mes = fecha.split('-')[1];
                   var mesActual = new Date().getMonth()+1;
                   var añoActual = new Date().getFullYear();
+
                   var deuda = deuda(parseInt(mes),parseInt(año), mesActual ,añoActual,)
 
                   function deuda(m1,a1,m2,a2){
-                    if(a1 == a2){
+                    if(a1 == a2 &&  m1 < m2 ){
                       return (m2-m1)*precio;
                     }
-                    if(a1<a2){
-                      return ((12-m1)*precio)+((image.png)*precio);
+                    else if(a1<a2){
+                      var años = a2-a1;
+                      return (((12*años)-m1)+m2)*precio;
+                    }
+                    else if(a1>=a2 && m1 >= m2){
+                      return 0;
                     }
                   }
-
                   document.getElementById('deuda').value = deuda;
-                  console.log(fecha);
-                  console.log(año);
-                  console.log(deuda);
                 }
 
                </script>
@@ -72,7 +73,7 @@
             </div>
 
             <div class="form-floating mb-3">
-              <input autofocus type="text" class="form-control rounded-0 " name="ubicacion">
+              <input required type="text" class="form-control rounded-0 " name="ubicacion">
               <label for="floatingInput">Ubicación</label>
             </div> 
 
@@ -81,19 +82,19 @@
                   <div class="modal-body">
 
           <div class="form-floating mb-3">
-            <input autofocus type="text" class="form-control rounded-0 " name="nombre" id="floatingInput" placeholder="name@example.com">
+            <input required type="text" class="form-control rounded-0 " name="nombre" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Nombre(s)</label>
           </div>  
 
           <div class="row">
 
             <div class="form-floating mb-3 col-md-6">
-              <input type="text" class="form-control rounded-0"  name="apellido_p" id="floatingInput" placeholder="name@example.com">
+              <input required type="text" class="form-control rounded-0"  name="apellido_p" id="floatingInput" placeholder="name@example.com">
               <label class="px-4" for="floatingInput">Apellido paterno</label>
             </div>
 
             <div class="form-floating mb-3 col-md-6">
-              <input type="text" class="form-control rounded-0" name="apellido_m" id="floatingInput" placeholder="name@example.com">
+              <input required type="text" class="form-control rounded-0" name="apellido_m" id="floatingInput" placeholder="name@example.com">
               <label class="px-4" for="floatingInput">Apellido materno</label>
             </div>
 
@@ -102,7 +103,7 @@
           <div class="row">
 
             <div class="form-floating mb-3 col-md-6">
-              <input type="text" class="form-control rounded-0" name="celular" id="floatingInput" placeholder="name@example.com">
+              <input required type="text" class="form-control rounded-0" name="celular" id="floatingInput" placeholder="name@example.com">
               <label class="px-4" for="floatingInput">Telefono / Celular</label>
             </div>
             <?php $fcha = date("Y-m-d");?>
@@ -132,7 +133,7 @@
           <div class="row">
 
             <div class="form-floating mb-3 col-md-6">
-              <input type="text" class="form-control rounded-0" name="num_casa" id="floatingInput" placeholder="name@example.com">
+              <input required type="text" class="form-control rounded-0" name="num_casa" id="floatingInput" placeholder="name@example.com">
               <label class="px-4" for="floatingInput">Nro. Casa</label>
             </div>
 
