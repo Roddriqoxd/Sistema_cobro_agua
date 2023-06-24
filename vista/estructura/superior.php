@@ -23,6 +23,7 @@ error_reporting(0);
     <link rel="stylesheet" href="../complementos/css/superior.css">
     <link rel="stylesheet" href="../complementos/css/bootstrap.min.css">
 
+    <script defer src="../complementos/js/jquery-3.7.0.min.js"></script>
     <script defer src="../vista/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
@@ -51,10 +52,10 @@ error_reporting(0);
         <a class="btn-routes" href="precio-agua.php"><div>Precio <br>agua</div></a>
         </section>
 
-        <!-- <section class="routes-content">
-          <i class="fas fa-light fa-scroll"></i>
-        <a class="btn-routes" href="">Historial de pagos</a>
-        </section> -->
+        <section class="routes-content">
+          <i class="fas fa-chess"></i>
+        <a class="btn-routes" href="administracion.php"><div>Registrar <br>adminstrador</div></a>
+        </section>
 
       </section>
 

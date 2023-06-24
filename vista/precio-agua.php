@@ -22,7 +22,7 @@
           ?>
 
               <label for="floatingInput">Precio actual</label>
-              <label for="floatingInput" style="font-size: 50px"><?php echo $data['agua']; ?></label>
+              <label for="floatingInput" id="precio_actual" style="font-size: 50px"><?php echo $data['agua']; ?></label>
               <label for="floatingInput">Bs.</label>
 
             <?php } ?>
@@ -40,7 +40,7 @@
             <input type="hidden" name="tipo" value="cambio_de_precio">
 
             <div class="modal-footer rounded-0">
-                <button type="submit" class="btn btn-primary">Cambiar</button>
+                <button onclick="enviar()" type="submit" class="btn btn-primary">Cambiar</button>
             </div>
 
         </form>
@@ -48,5 +48,9 @@
       </section>
 
     </section>
-
+    <script src="../complementos/js/jquery-3.7.0.min.js"></script>
+    <script src="../complementos/js/funciones.js"></script>
+<script>
+    
+</script>
 <?php require_once "../vista/estructura/inferior.php"; ?>

@@ -11,7 +11,7 @@
 
         <section class="content-body">
           
-            <a href="{{ route( 'medidor.guardar') }}" class="seleccion-tipo-registro">
+            <a href="#segundo-medidor.php" class="seleccion-tipo-registro">
                 <div class="content-img">
                     <i class="fa-solid fa-user"></i>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
                 <label class="content-text" for="">Medidor y <br> afiliado</label>
             </a>
-            <a href="" class="seleccion-tipo-registro">
+            <a href="#cambiar-nombre.php" class="seleccion-tipo-registro">
                 <div class="content-img">
                     <i class="fa-solid fa-faucet-drip"></i>
                 </div>
