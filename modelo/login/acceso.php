@@ -4,7 +4,7 @@
     $password=$_POST['password'];
     session_start();
 
-    $conexion=mysqli_connect("localhost","root","1234","sistema_cobro_agua");
+    require_once "../bd.php";
     $consulta= "SELECT * FROM usuarios WHERE correo='$correo' AND password='$password'";
     $resultado=mysqli_query($conexion, $consulta);
     $filas=mysqli_num_rows($resultado);
@@ -12,7 +12,8 @@
     if($filas){
         while ($data = mysqli_fetch_assoc($resultado)) {
 
-            $_SESSION['nombre']=$data['nombre'];
+            $_SESSION['nombre']=$data['usuario'];
+            $_SESSION['password']=$data['password'];
         }
         header('Location: ../../vista/mostrar.php');
 

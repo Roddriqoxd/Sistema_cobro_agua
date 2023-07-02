@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2023 a las 01:54:47
+-- Tiempo de generación: 02-07-2023 a las 22:42:02
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.0.19
 
@@ -66,9 +66,15 @@ CREATE TABLE `medidor` (
 --
 
 INSERT INTO `medidor` (`id`, `codigo`, `deuda`, `ubicacion`, `precio`) VALUES
-(26, '213123123', '30', 'Calle imnominada', 1),
-(27, '34342342', '60', 'Calle Independencia', 1),
-(28, '68786786768', '15', 'Calle Porvenir entre Granado', 1);
+(26, '213123123', '90', 'Calle imnominada', 1),
+(27, '34342342', '90', 'Calle Independencia', 1),
+(28, '68786786768', '165', 'Calle Porvenir entre Granado', 1),
+(29, '', '', '', 1),
+(30, '', '', '', 1),
+(31, '', '', '', 1),
+(32, '', '', '', 1),
+(33, '', '', '', 1),
+(34, '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -96,8 +102,7 @@ INSERT INTO `precio` (`id`, `agua`) VALUES
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
-  `apellido` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `usuario` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -106,9 +111,8 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `correo`, `password`) VALUES
-(1, 'Rodrigo', 'Lopez', 'rodrigo@gmail.com', '123123123'),
-(2, 'admin', 'admin', 'admin', 'admin');
+INSERT INTO `usuarios` (`id`, `usuario`, `correo`, `password`) VALUES
+(9, 'Rodrigo', 'rod@gmail.com', '123');
 
 --
 -- Índices para tablas volcadas
@@ -148,13 +152,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `medidor`
 --
 ALTER TABLE `medidor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de la tabla `precio`
@@ -166,7 +170,7 @@ ALTER TABLE `precio`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

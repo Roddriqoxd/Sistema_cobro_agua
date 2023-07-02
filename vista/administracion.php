@@ -1,4 +1,15 @@
 <?php require_once "../vista/estructura/superior.php"?>
+<?php
+session_start();
+error_reporting(0);
+	$varsesion = $_SESSION['admin'];
+
+	if($varsesion == null || $varsesion= ''){
+
+	    header("Location: mostrar.php");
+		die();
+	}
+?>
 
 <link rel="stylesheet" href="../complementos/css/agregar.css">
 
@@ -14,35 +25,38 @@
 
             <h4>Registrar administrador</h4>
 
-            <form class="form-data" action="../modelo/registrar.php" method="POST">
+            <form class="form-data" action="../modelo/administrador.php" method="POST">
 
                 <div class="modal-body">
 
                     <div class="form-floating mb-3">
-                        <input autofocus type="text" class="form-control rounded-0" name="codigo" required>
+                        <input autofocus type="text" class="form-control rounded-0" id="usuario" name="usuario"
+                            required>
                         <label class="form-check-label" for="validationFormCheck1">Nombre de usuario</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input required type="email" class="form-control rounded-0 " name="ubicacion">
+                        <input required type="email" class="form-control rounded-0 " id="correo" name="correo">
                         <label for="floatingInput">Correo</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input required type="password" class="form-control rounded-0 " id="pass" name="ubicacion">
+                        <input required type="password" class="form-control rounded-0 " id="pass" name="password">
                         <label for="floatingInput">Contraseña</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input required type="password" class="form-control rounded-0 " id="confir" name="ubicacion">
+                        <input required type="password" class="form-control rounded-0 " id="confir" name="conf-pass">
                         <label for="floatingInput">Confirmar Contraseña</label>
                     </div>
 
                 </div>
 
+                <input type="hidden" name="tipo" value="registrar">
+
                 <div class="modal-footer rounded-0">
                     <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" type="submit"
-                        class="btn btn-success" id="registrar">Añadir</button>
+                        class="btn btn-success" id="registrar" disabled>Añadir</button>
                 </div>
 
             </form>
@@ -50,7 +64,7 @@
 
         <div class="col-6">
 
-            <h4>Lista de usuarios</h4><br>
+            <h4>Lista de administradores</h4><br>
 
             <table class="table table-bordered">
                 <thead>
@@ -67,10 +81,10 @@
                     while ($data = mysqli_fetch_assoc($query)) {
                     ?>
                     <tr>
-                        <td><?php echo $data['nombre']; ?></td>
+                        <td><?php echo $data['usuario']; ?></td>
                         <td><?php echo $data['correo']; ?></td>
                         <td>
-                            <form action="" method="post">
+                            <form action="../modelo/administrador.php?id=<?php echo $data['id']?>&tipo=eliminar" method="post">
                                 <button class="btn btn-danger btn-sm">Borrar</button>
                             </form>
                         </td>
@@ -82,38 +96,9 @@
 
     </div>
 
-
-
 </section>
 
 </section>
 <script src="../complementos/js/jquery-3.7.0.min.js"></script>
-<script>
-$("#confir").keyup(function(e) {
-
-    var confir = $("#confir").val();
-    var pass = $("#pass").val();
-
-    if (confir != pass) {
-        $("#confir").addClass("is-invalid");
-        $("#registrar").attr('disabled',true);
-    } else if (confir === pass) {
-        $("#confir").removeClass("is-invalid");
-        $("#registrar").attr('disabled',false);
-    }
-});
-$("#pass").keyup(function(f) {
-
-    var confir = $("#confir").val();
-    var pass = $("#pass").val();
-
-    if (confir != pass) {
-        $("#confir").addClass("is-invalid");
-        $("#registrar").attr('disabled',true);
-    } else if (confir === pass) {
-        $("#confir").removeClass("is-invalid");
-        $("#registrar").attr('disabled',false);
-    }
-});
-</script>
+<script src="../complementos/js/administrador.js"></script>
 <?php require_once "../vista/estructura/inferior.php"?>
