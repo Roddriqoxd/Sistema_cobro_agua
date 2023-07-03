@@ -1,22 +1,52 @@
 .container-content{
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    padding: 20px;
-    height: 100vh;
-    overflow: auto;
-  }
-  .content-cabecera{
-    padding-bottom: 10px;
-    height: 10%;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 85%; 
+  padding: 20px; 
+  height: 100vh; 
+  overflow: auto;
+}
+
+.content-cabecera{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px; 
+  height: 7%;
+}
+
+.cabecera-title{
+  font-weight: bold;
+}
 
   .form-data{
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: white;
     padding: 20px;
     border-radius: 5px;
+    background-color: rgba(0, 255, 255, 0);
+  }
+
+.form-control{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.form-control:focus{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.flexing{
+  display: flex;
+  gap: 15px;
+}
+
+.form-control-dark:focus{
+color: white;
+}
+
+.form-control-dark{
+  color: white;
   }

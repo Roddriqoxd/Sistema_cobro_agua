@@ -3,24 +3,27 @@
 <link rel="stylesheet" href="../complementos/css/mostrar.css">
 
 <section class="container-content">
-
     <section class="content-cabecera">
-        <h3 class="cabecera-title">Afiliados</h3>
-
+        <h3 class="cabecera-title">AFILIADOS</h3>
+        <section class="temas">
+            <i id="dark" class="fa-solid fa-moon"></i>
+            <i id="claro" class="fa-solid fa-sun"></i>
+        </section>
     </section>
+    <hr>
 
-    <form class="input-group mb-3" style="width: 500px;" action="" method="GET">
-        <input type="text" class="form-control" placeholder="Buscar nombre" name="palabra"
-            aria-label="Recipient's username" aria-describedby="button-addon2">
-        <input class="btn bg-warning" type="submit" name="buscar" id="button-addon2" value="Buscar">
-    </form>
-    <script>
-    document.getElementById('button-addon2').click;
-    </script>
+    <section class="content-body">
 
-    <section class="content-form">
+        <form class="buscador" action="" method="GET">
+            <input type="text" class="buscar" placeholder="Buscar nombre" name="palabra">
+            <input class="lupa" type="submit" id="buscar" name="buscar" value="Buscar">
 
-        <table class="table">
+        </form>
+        <script>
+        document.getElementById('button-addon2').click;
+        </script>
+
+        <table class="tabla">
             <thead class="title">
                 <tr>
                     <th class="col">#</th>
@@ -70,9 +73,45 @@
                 <?php }?>
             </tbody>
         </table>
-
     </section>
 
 </section>
+<script defer>
+    function color() {
 
+        var tema = localStorage.getItem("tema");
+
+        switch (tema) {
+            case "dark":
+                $("body").addClass("bg-dark");
+                $("body").addClass("text");
+                $(".buscar").addClass("blanco");
+                $(".lupa").addClass("blanco");
+                $(".title").removeClass("blanco");
+                break;
+
+            case "claro":
+                $("body").removeClass("bg-dark");
+                $("body").removeClass("text");
+                $(".title").addClass("blanco");
+                $(".buscar").removeClass("blanco");
+                $(".lupa").removeClass("blanco");
+                break;
+        }
+
+    }
+
+    color();
+
+    $("#dark").click(function() {
+        localStorage.setItem("tema", "dark");
+        color();
+    })
+
+    $("#claro").click(function() {
+        localStorage.setItem("tema", "claro");
+        color();
+    })
+
+    </script>
 <?php require_once "../vista/estructura/inferior.php"?>

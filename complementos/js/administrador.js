@@ -32,6 +32,7 @@ $("#pass").keyup(function() {
     }
 });
 
+revisar();
 $('#usuario').keyup(revisar);
 $('#correo').keyup(revisar);
 
@@ -42,7 +43,40 @@ function revisar(){
     if(usuario != "" && correo != "" && confirmarPassword == true){
         $("#registrar").attr('disabled',false);
     }else{
-        $("#registrar").attr('disabled',true);
+        $("#registrar").attr('disabled',false);
     }
 }
 
+function color() {
+
+    var tema = localStorage.getItem("tema");
+
+    switch (tema) {
+        case "dark":
+            $("body").addClass("bg-dark");
+            $("body").addClass("text");
+            $(".title").removeClass("blanco");
+            $(".form-control").addClass("form-control-dark");
+            break;
+
+        case "claro":
+            $("body").removeClass("bg-dark");
+            $("body").removeClass("text");
+            $(".title").addClass("blanco");
+            $(".form-control").removeClass("form-control-dark");
+            break;
+    }
+
+}
+
+color();
+
+$("#dark").click(function() {
+    localStorage.setItem("tema", "dark");
+    color();
+})
+
+$("#claro").click(function() {
+    localStorage.setItem("tema", "claro");
+    color();
+})

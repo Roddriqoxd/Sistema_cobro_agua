@@ -1,4 +1,6 @@
 <?php require_once "../vista/estructura/superior.php"?>
+<link rel="stylesheet" href="../complementos/css/mostrar.css">
+
 <?php
 session_start();
 error_reporting(0);
@@ -17,11 +19,15 @@ error_reporting(0);
 
     <section class="content-cabecera">
         <h4 class="cabecera-title">ADMINISTRACION</h4>
-        <hr>
+        <section class="temas">
+            <i id="dark" class="fa-solid fa-moon"></i>
+            <i id="claro" class="fa-solid fa-sun"></i>
+        </section>
     </section>
+    <hr>
 
-    <div class="col-12 row">
-        <div class="col-6">
+    <div class="col-12">
+        <div class="col-12">
 
             <h4>Registrar administrador</h4>
 
@@ -56,22 +62,22 @@ error_reporting(0);
 
                 <div class="modal-footer rounded-0">
                     <button data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" type="submit"
-                        class="btn btn-success" id="registrar" disabled>Añadir</button>
+                        class="btn btn-success" id="registrar">Añadir</button>
                 </div>
 
             </form>
         </div>
 
-        <div class="col-6">
+        <div class="col-12">
 
             <h4>Lista de administradores</h4><br>
 
-            <table class="table table-bordered">
-                <thead>
+            <table class="tabla">
+                <thead class="title">
                     <tr>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Acción</th>
+                        <th class="col">Usuario</th>
+                        <th class="col">Correo</th>
+                        <th class="col">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -81,10 +87,11 @@ error_reporting(0);
                     while ($data = mysqli_fetch_assoc($query)) {
                     ?>
                     <tr>
-                        <td><?php echo $data['usuario']; ?></td>
-                        <td><?php echo $data['correo']; ?></td>
-                        <td>
-                            <form action="../modelo/administrador.php?id=<?php echo $data['id']?>&tipo=eliminar" method="post">
+                        <td class="col"><?php echo $data['usuario']; ?></td>
+                        <td class="col"><?php echo $data['correo']; ?></td>
+                        <td class="col">
+                            <form action="../modelo/administrador.php?id=<?php echo $data['id']?>&tipo=eliminar"
+                                method="post">
                                 <button class="btn btn-danger btn-sm">Borrar</button>
                             </form>
                         </td>
@@ -99,6 +106,5 @@ error_reporting(0);
 </section>
 
 </section>
-<script src="../complementos/js/jquery-3.7.0.min.js"></script>
 <script src="../complementos/js/administrador.js"></script>
 <?php require_once "../vista/estructura/inferior.php"?>

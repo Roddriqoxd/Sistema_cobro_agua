@@ -1,56 +1,70 @@
 .container-content{
-    display: flex;
-    flex-direction: column;
-    width: 85%;
-    padding: 20px;
-    height: 100vh;
-  }
-  .content-cabecera{
-    display: flex;
-    padding-bottom: 10px;
-    height: 10%;
-    justify-content: space-between;
-  }
-  .content-btn{
-    padding-right: 3%;
-  }
-  .btn{
-    background-color: #3863a3;
-    color: white;
-  }
-  .btn:hover{
-    background-color: #3863a3;
-    color: white;
-    font-weight: bold;
-  }  
-  .content-form{
-    padding-left: 1%;
-    padding-right: 1%;
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: auto;
-  }
-  .table-container{
-    border: 1px solid;
-  }
-  .title{
-    color: black;
-  }
-  .table{
-    background-color: white;
-  }
-  .modal{
-    overflow: auto;
-  }
-  .cabecera-title{
-    font-weight: bold;
-  }
-  .overflow{
-    width: 200px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 85%; 
+  padding: 20px; 
+  height: 100vh; 
+  overflow: auto;
+}
+
+.content-cabecera{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px; 
+  height: 7%;
+}
+
+.cabecera-title{
+  font-weight: bold;
+}
+
+ .content-body{
+  width: 100%;
+  height: 93%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.buscar{
+  background-color: #e51d1d05;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid rgb(118, 118, 118);
+  width: 500px;
+  outline: none;
+}
+
+.lupa{
+  background-color: var(--bs-cyan);
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.buscador{
+  padding: 20px;
+}
+
+.tabla{
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.139);
+  box-shadow: 7px 7px 7px rgb(51, 51, 51);
+  width: 98%;
+}
+
+.col{
+  padding: 10px;
+  border-bottom: solid 1px;
+}
+
+.title{
+  background-color: var(--bs-indigo);
+}
+
+.blanco{
+  color: white;
+}

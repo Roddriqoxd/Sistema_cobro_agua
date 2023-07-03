@@ -1,16 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap');
-      
+
 body{
   display: flex;
   flex-direction: row;
-  font-family: 'Poppins', sans-serif; 
+}
+
+.text{
+  color: #dcdcdc;
 }
 .container-nav{
-  background-color: #3863a3;
+  background-color: #4c0bce;
   width: 15%;
   height: 100vh;
   box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .gg-atlasian{
   color: white;
@@ -18,8 +22,6 @@ body{
 }
 .nav-logo{
   display: flex;
-  padding: 10px;
-  gap: 10px;
   color: white;
   height: 10%;
   justify-content: center;
@@ -29,20 +31,63 @@ body{
   display: flex;
   flex-direction: column;
   height: 80%;
-  align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-top: -30px;
 }
 .routes-content{
   color: white;
-  gap: 10px;
   display: flex;
   align-items: center;
+  padding: 20px;
+  width: 100%;
+  gap: 20px;
 }
-.fas{
-  padding-right: 8px;
-  color: #5683c7
+
+.margen{
+  width: 98%;
+  background-color: #3e4451;
+  box-shadow:  5px 5px 5px #303030;
 }
+
 .btn-routes{
   text-decoration: none;
   color: white;
+}
+
+.violeta{
+  color: var(--bs-indigo);
+}
+
+.cyan{
+  color: var(--bs-cyan)
+}
+
+.pink{
+  color: var(--bs-pink)
+}
+
+.naranja{
+  color: var(--bs-orange)
+}
+
+.btn-naranja{
+  background-color: var(--bs-orange);
+  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.temas{
+  display: flex;
+  gap: 15px;
+}
+
+.temas i{
+  font-size: 20px;
+  padding: 2px;
+  cursor: pointer;
 }

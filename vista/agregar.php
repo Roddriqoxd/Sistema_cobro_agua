@@ -6,9 +6,12 @@
 
     <section class="content-cabecera">
         <h3 class="cabecera-title">REGISTRAR MEDIDOR Y AFILIADO</h3>
-        <hr>
+        <section class="temas">
+            <i id="dark" class="fa-solid fa-moon"></i>
+            <i id="claro" class="fa-solid fa-sun"></i>
+        </section>
     </section>
-
+    <hr>
     <form class="form-data" action="../modelo/registrar.php" method="POST">
 
         <div class="modal-body">
@@ -18,17 +21,18 @@
                 <label class="form-check-label" for="validationFormCheck1">Codigo medidor</label>
             </div>
 
-            <div class="row">
+            <div class="flexing">
 
                 <div class="form-floating mb-3 col-md-6">
                     <input required type="date" class="form-control rounded-0" name="fecha" id="fecha"
                         onchange="sumar()">
-                    <label class="px-4" for="floatingInput">Ultima fecha de pago</label>
+                    <label class="form-check-label espacio" for="floatingInput">Ultima fecha de pago</label>
                 </div>
 
                 <div class="form-floating mb-3 col-md-6">
-                    <input type="text" class="form-control rounded-0" name="deuda" id="deuda" value="" readonly>
-                    <label class="px-4" for="floatingInput">Deuda Bs.</label>
+                    <input type="text" class="form-control rounded-0 espacio" name="deuda" id="deuda" value="0"
+                        readonly>
+                    <label class="form-check-label" for="floatingInput">Deuda Bs.</label>
                 </div>
 
                 <input type="hidden" name="tipo" value="medidor_y_empleado">
@@ -70,8 +74,9 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input required type="text" class="form-control rounded-0 " name="ubicacion">
-                <label for="floatingInput">Ubicación</label>
+                <input required type="text" class="form-control rounded-0 " name="ubicacion" id="floatingInput"
+                    placeholder="name@example.com">
+                <label class="form-check-label" for="floatingInput">Ubicacion</label>
             </div>
 
         </div>
@@ -81,37 +86,37 @@
             <div class="form-floating mb-3">
                 <input required type="text" class="form-control rounded-0 " name="nombre" id="floatingInput"
                     placeholder="name@example.com">
-                <label for="floatingInput">Nombre(s)</label>
+                <label class="form-check-label" for="floatingInput">Nombre(s)</label>
             </div>
 
-            <div class="row">
+            <div class="flexing">
 
                 <div class="form-floating mb-3 col-md-6">
                     <input required type="text" class="form-control rounded-0" name="apellido_p" id="floatingInput"
                         placeholder="name@example.com">
-                    <label class="px-4" for="floatingInput">Apellido paterno</label>
+                    <label class="form-check-label" for="floatingInput">Apellido paterno</label>
                 </div>
 
                 <div class="form-floating mb-3 col-md-6">
                     <input required type="text" class="form-control rounded-0" name="apellido_m" id="floatingInput"
                         placeholder="name@example.com">
-                    <label class="px-4" for="floatingInput">Apellido materno</label>
+                    <label class="form-check-label" for="floatingInput">Apellido materno</label>
                 </div>
 
             </div>
 
-            <div class="row">
+            <div class="flexing">
 
                 <div class="form-floating mb-3 col-md-6">
                     <input required type="text" class="form-control rounded-0" name="celular" id="floatingInput"
                         placeholder="name@example.com">
-                    <label class="px-4" for="floatingInput">Telefono / Celular</label>
+                    <label class="form-check-label" for="floatingInput">Telefono / Celular</label>
                 </div>
                 <?php $fcha = date("Y-m-d");?>
                 <div class="form-floating mb-3 col-md-6">
                     <input type="date" readonly class="form-control rounded-0" name="fecha_registro" value=""
                         id="fechaActual">
-                    <label class="px-4" for="floatingInput">Fecha de ingreso</label>
+                    <label class="form-check-label" for="floatingInput">Fecha de ingreso</label>
                 </div>
 
                 <script>
@@ -130,12 +135,12 @@
 
             </div>
 
-            <div class="row">
+            <div class="flexing">
 
                 <div class="form-floating mb-3 col-md-6">
                     <input required type="text" class="form-control rounded-0" name="num_casa" id="floatingInput"
                         placeholder="name@example.com">
-                    <label class="px-4" for="floatingInput">Nro. Casa</label>
+                    <label class="form-check-label" for="floatingInput">Nro. Casa</label>
                 </div>
 
             </div>
@@ -152,7 +157,39 @@
     </form>
 
 </section>
-
-</section>
 <script src="../complementos/js/jquery-3.7.0.min.js"></script>
+<script defer>
+    function color() {
+
+        var tema = localStorage.getItem("tema");
+
+        switch (tema) {
+            case "dark":
+                $("body").addClass("bg-dark");
+                $("body").addClass("text");
+                $(".form-control").addClass("form-control-dark");
+                break;
+
+            case "claro":
+                $("body").removeClass("bg-dark");
+                $("body").removeClass("text");
+                $(".form-control").removeClass("form-control-dark");
+                break;
+        }
+
+    }
+
+    color();
+
+    $("#dark").click(function() {
+        localStorage.setItem("tema", "dark");
+        color();
+    })
+
+    $("#claro").click(function() {
+        localStorage.setItem("tema", "claro");
+        color();
+    })
+
+    </script>
 <?php require_once "../vista/estructura/inferior.php"?>
